@@ -1,0 +1,20 @@
+<%- include('../partials/header') %>
+<h1>test</h1>
+<table id="list">
+    <thead>
+    <tr>
+    <th></th>
+    <th><br></th>
+    <th></th>
+    </tr>
+    </thead>
+    <tbody>
+    <% appointments.forEach(function(m) { %>
+    <tr>
+    <td><%= m.title %></td>
+    
+    </tr>
+    <% }); %>
+    </tbody>
+    </table>
+<%- include('../partials/footer') %>

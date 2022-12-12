@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/stylesheets/style.css">
+    <title>new customer</title>
+</head>
+<body>
+    <% if (user) { %>
+        
+        <a href="../">MY CUSTOMERS</a>
+    <a href="./customers/new">ADD CUSTOMER</a>
+        <a href="/logout">LOG-OUT</a>
+      <% } else { %>
+        <a href="/auth/google" class="login">LOGIN</a>
+      <% } %>
+
+    <h1>edit customer</h1>
+    <form id="new-form" action="/customers/<%= customer._id %>?_method=PUT" method="POST">
+        <label>Name: </label>
+        <input type="text" name="name">
+        <label>E-mail: </label>
+        <input type="text" name="email">
+        <label>Phone <small>(no spaces or other characters)</small>: </label>
+        <input type="text" name="phone">
+       
+        <input type="submit" value="Modify">
+      </form>
+</body>
+</html>
+

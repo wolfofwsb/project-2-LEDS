@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/stylesheets/style.css">
+    <title>
+        <%= customer.name %>
+    </title>
+</head>
+
+<body>
+    <% if (user) { %>
+       
+        <a href="./">MY CUSTOMERS</a>
+        <a href="./new">ADD CUSTOMER</a>
+        <a href="/logout">LOG-OUT</a>
+        <% } else { %>
+            <a href="/auth/google" class="login">LOGIN</a>
+            <% } %>
+
+                <h1>
+                    <%= customer.name %>
+                </h1>
+
+                <br>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Service</th>
+                            <th>Date</th>
+            
+                            
+                        </tr>
+                    </thead>
+                    <tbody>
+                        
+                            <% customer.appointments.forEach(a=> { %>
+                               
+                                    <td>
+                                        <%= a.services %>
+                                    </td>
+                                    <td>
+                                        <%= a.date %>
+                                    </td>
+                                
+
+                                    
+                                    <td><form action="/appointments/<%= a._id %>?_method=DELETE" method="POST">
+                                        <button type="submit">X</button>
+                                      </form></td>
+                    </tbody>
+                    <% }); %>
+
+                       
+                </table>
+                <br>
+                <form method="POST" action="/customers/<%= customer.id %>/appointments">
+                    <label>Service:
+                        <select name="services">
+                            <option value="LED Headlight">LED Headlight</option>
+                            <option value="LED Bar">LED Bar</option>
+                            <option value="Window Tint">Window Tint</option>
+                        
+                        </select>
+                    </label>
+                    <label>Date: </label>
+                    <input type="datetime-local" name="date">
+                  
+                
+                    
+                    <input type="submit" value="Add Appointment">
+</body>
+
+</html>

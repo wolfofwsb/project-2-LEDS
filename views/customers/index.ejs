@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/stylesheets/style.css">
+    <title>Your Clients</title>
+</head>
+<body>
+    <% if (user) { %>
+       
+        
+    <a href="/customers/new">ADD CUSTOMER</a>
+        <a href="/logout">LOG-OUT</a>
+      <% } else { %>
+        <a href="/auth/google" class="login">LOGIN</a>
+      <% } %>
+
+    <h1>YOUR CUSTOMERS</h1>
+ 
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Phone</th>
+            </tr>
+        </thead>
+    <% customer.forEach(c => { %>
+            <tbody>
+                <tr>
+                <td><%= c.name %></td>  
+                <td><%= c.email %> </td>
+                <td><%= c.phone %></td>
+                <td><a href="/customers/<%= c.id %>">Details</a></td>
+                <td><a href="/customers/<%= c.id %>/edit">Edit</a></td>
+                
+                <td><form action="/customers/<%= c.id %>?_method=DELETE" method="POST">
+                    <button type="submit">X</button>
+                  </form></td>
+                </tr>
+        <% }); %> 
+    </tbody>
+    </table>
+</body>
+</html>

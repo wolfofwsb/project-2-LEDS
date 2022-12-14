@@ -1,20 +1,31 @@
-.brand-logo {
-  margin-left: 15px;
+body {
+  background-image: url('https://scontent.ffar1-2.fna.fbcdn.net/v/t31.18172-8/14241414_249162395484591_3530298318052687421_o.jpg?_nc_cat=111&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=Cej-0Dshmu8AX8Po9IT&_nc_ht=scontent.ffar1-2.fna&oh=00_AfAGsDlIdVjWd6WBCYzps1RX-9_m1zGuV5ZQGZee0w1zgw&oe=63C19AD4');
+  background-size: cover;
+  text-align: left;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+
+
 }
 
-.card .card-content .card-title {
-  margin-bottom: 10px;
+h1 {
+  color: darkblue;
+
 }
 
-#search-row form {
-  padding-top: 20px;
+a {
+  color: darkgray;
+
 }
 
-.student-name {
-  position: relative;
-  top: -5px;
+form {
+  color: darkblue;
+
+
 }
 
-.collection-item form {
-  margin-top: -5px;
+#customerResults {
+  color: darkblue;
+  text-align: left;
+
+
 }
